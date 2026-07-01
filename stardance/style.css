@@ -28,7 +28,174 @@ div{
 
 h1{
     color: red;
+    transition: 1s;
 }
+
+h1:hover{
+    color: white;
+}
+
+h3{
+    color: white;
+    transition: 1s;
+}
+
+h3:hover{
+    color: red;
+}
+
+
+
+.bar{
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    padding: 5px;
+    border: solid 1px red;
+    border-radius: 5px;
+    color: white;
+    width: 97%;
+    position:absolute;
+    bottom: 0%;
+    backdrop-filter: blur(5px);
+    background-color:rgba(0, 0, 0, 0.25); 
+    justify-content: space-between;
+    z-index: 5;
+    align-items: center;
+}
+
+
+.tux{
+    width: 50px;
+    height: 50px;
+}
+
+#apps{
+    padding-top: 64px;
+    padding-left: 16px;
+    width:100px;
+}
+
+#fish-app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#info-app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#puzzle-app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#puzzle{
+    font-size: 35px;
+    text-align: center;
+    color: black;
+}
+
+.app-style{
+    background-color: red;
+    width: 50px;
+    height:50px;
+    border:solid 1px red;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    transition: 1s;
+}
+
+.app-style:hover{
+    background-color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#window {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(5px);
+  background-color:rgba(0, 0, 0, 0.25); 
+  text-align: center;
+  border: 1px solid red;
+  border-radius:5px;
+}
+#window:hover{
+      box-shadow: 0 0 5px white, 0 0 50px red;  
+}
+
+
+#window-header {
+  display: flex;
+  flex-direction: row-reverse;
+  cursor: move;
+  z-index: 2;
+  background-color: red;
+  color: white;
+}
+
+#open{
+    border: solid 1px white;
+    border-radius:25px;
+    width:25px;
+    height:25px;
+    background-color: black;
+    color:white;
+    margin-right:10px;
+    transition: 1s;
+}
+
+#open:hover{
+    background-color:white;
+    color:black;
+    border: solid 1px black;
+}
+
+#close{
+    border: solid 1px white;
+    border-radius:25px;
+    width:25px;
+    height:25px;
+    background-color: black;
+    color:white;
+    margin-right:10px;
+    transition: 1s;
+}
+
+#close:hover{
+    background-color:white;
+    color:black;
+    border: solid 1px black;
+}
+
+
+
+
+
+
 
 
 
@@ -38,6 +205,9 @@ h1{
     align-items: center;
     animation-name: myAnimation;
     animation-duration: 1s;
+    margin: 10%;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 @keyframes myAnimation {
   from {opacity: 0.1; }
@@ -82,6 +252,9 @@ color: red;
     padding-top:5px ;
 }
 
+.link:hover{
+    color:white;
+}
 
 #stats{
     display: flex;
@@ -89,17 +262,38 @@ color: red;
     margin-top: 10px;
 }
 
-.button{
-    border: solid 1px red;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: black;
-    transition: 1s;
-    margin-top: 10px;
+#window2 {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(5px);
+  background-color:rgba(0, 0, 0, 0.25); 
+  text-align: center;
+  border: 1px solid red;
+  border-radius:5px;
+}
+#window2:hover{
+      box-shadow: 0 0 5px white, 0 0 50px red;  
 }
 
-.button:hover{
-    background-color: white;
+
+.fastfetch{
+    display: flex;
+    flex-direction: row;
 }
+
+.system-info{
+    padding:10%;
+    width:400px;
+}
+
+.sys-info{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
 
 
