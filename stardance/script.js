@@ -87,6 +87,114 @@ const chess_elo = fetch("https://api.chess.com/pub/player/mrneko-og/stats")
 .then(response => response.json())
 .then(data => document.getElementById("chess").innerHTML = data.chess_rapid.last.rating)
 
+//time tracking
+
+function updateTime(){
+    var currentTime = new Date().toLocaleString();
+    var timeText = document.getElementById("time-bar")
+    var timeText2 = document.getElementById("time2")
+    timeText.innerHTML = currentTime
+    timeText2.innerHTML = currentTime
+}
+setInterval(updateTime, 1000)
+
+
+
+
+
+
+//dragable windows
+
+dragElement(document.getElementById("window"));
+dragElement(document.getElementById("window2"));
+function dragElement(element){
+    var initialX = 0;
+    var initialY = 0;
+    var currentX = 0;
+    var currentY = 0;
+
+    if (document.getElementById(element.id + "header")){
+        document.getElementById(element.id + "header").onmousedown = startDragging
+    }
+
+    else {
+       element.onmousedown = startDragging; 
+    }
+
+    function startDragging(e){
+        e = e || window.event;
+        e.preventDefault();
+        initialX = e.clientX;
+        initialY = e.clientY;
+
+        document.onmouseup = stopDragging;
+        document.onmousemove = dragElement;
+    }
+
+      function dragElement(e) {
+    e = e || window.event;
+    e.preventDefault();
+
+    currentX = initialX - e.clientX;
+    currentY = initialY - e.clientY;
+    initialX = e.clientX;
+    initialY = e.clientY;
+
+    element.style.top = (element.offsetTop - currentY) + "px";
+    element.style.left = (element.offsetLeft - currentX) + "px";
+  }
+
+  function stopDragging() {
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
+// close and open windows
+var window1 = document.getElementById("window")
+
+var close = document.getElementById("close")
+var open = document.getElementById("open")
+
+function closeWindow(element){
+    element.style.display = "none"
+}
+
+function openWindow(element){
+    element.style.display = "flex"
+}
+
+close.addEventListener("click", function(){
+closeWindow(window1);
+});
+
+open.addEventListener("click", function(){
+openWindow(window1);
+});
+
+//same
+
+var window2 = document.getElementById("window2")
+
+var close = document.getElementById("close")
+var open = document.getElementById("open")
+
+function closeWindow2(element){
+    element.style.display = "none"
+}
+
+function openWindow2(element){
+    element.style.display = "flex"
+}
+
+close.addEventListener("click", function(){
+closeWindow2(window2);
+});
+
+open.addEventListener("click", function(){
+openWindow2(window2);
+});
+//apps
 
 
 
