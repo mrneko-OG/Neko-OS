@@ -157,23 +157,6 @@ h3:hover{
   color: white;
 }
 
-#open{
-    border: solid 1px white;
-    border-radius:25px;
-    width:25px;
-    height:25px;
-    background-color: black;
-    color:white;
-    margin-right:10px;
-    transition: 1s;
-}
-
-#open:hover{
-    background-color:white;
-    color:black;
-    border: solid 1px black;
-}
-
 #close{
     border: solid 1px white;
     border-radius:25px;
@@ -277,7 +260,22 @@ color: red;
       box-shadow: 0 0 5px white, 0 0 50px red;  
 }
 
-
+.window-name1{
+    color: black;
+    padding-right:83%;
+    padding-top:3px;
+}
+.window-name1:hover{
+    color: white;
+}
+.window-name2{
+    color: black;
+    padding-right:90%;
+    padding-top:3px;
+}
+.window-name2:hover{
+    color: white;
+}
 .fastfetch{
     display: flex;
     flex-direction: row;
@@ -293,7 +291,69 @@ color: red;
     flex-direction: row;
 }
 
+#window3 {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(5px);
+  background-color:rgba(0, 0, 0, 0.25); 
+  text-align: center;
+  border: 1px solid red;
+  border-radius:5px;
+}
+#window3:hover{
+      box-shadow: 0 0 5px white, 0 0 50px red;  
+}
 
+.window-name3{
+    color: black;
+    margin-top:3px;
+    margin-right:87%;
+}
 
+.window-name3:hover{
+    color: white;
+}
 
+.square{
+    background-color: red;
+    color: red;
+    text-align: center;
+    font-size: 60px;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+}
 
+.square:hover{
+    border: solid 1px red;
+}
+
+.board{
+display: grid;
+grid-template-columns: repeat(8, 1fr);
+height: 560px;
+width: 560px;
+box-shadow: 0 0 5px white, 0 0 50px red;
+margin-top: 30px;
+}
+
+.files:nth-of-type(odd) .square:nth-of-type(even){
+    
+    background-color: black;
+}
+
+.files:nth-of-type(odd) .square:nth-of-type(odd){
+    background-color: white;
+}
+
+.files:nth-of-type(even) .square:nth-of-type(even){
+    
+    
+    background-color: white;
+}
+
+.files:nth-of-type(even) .square:nth-of-type(odd){
+    background-color: black;
+}
