@@ -34,7 +34,6 @@ class Effect {
         this.columns = this.canvasWidth/this.fontSize;
         this.symbols = [];
         this.#initialize();
-        console.log(this.symbols);
     }
     #initialize(){
         for (let i = 0; i < this.columns; i++){
@@ -107,6 +106,7 @@ setInterval(updateTime, 1000)
 
 dragElement(document.getElementById("window"));
 dragElement(document.getElementById("window2"));
+dragElement(document.getElementById("window3"));
 function dragElement(element){
     var initialX = 0;
     var initialY = 0;
@@ -164,15 +164,22 @@ function openWindow(element){
     element.style.display = "flex"
 }
 
-close.addEventListener("click", function(){
-closeWindow(window1);
-});
 
-open.addEventListener("click", function(){
-openWindow(window1);
-});
 
-//same
+//window3
+
+var window3 = document.getElementById("window3")
+
+var close = document.getElementById("close")
+var open = document.getElementById("open")
+
+function closeWindow2(element){
+    element.style.display = "none"
+}
+
+function openWindow2(element){
+    element.style.display = "flex"
+}
 
 var window2 = document.getElementById("window2")
 
@@ -187,16 +194,23 @@ function openWindow2(element){
     element.style.display = "flex"
 }
 
-close.addEventListener("click", function(){
-closeWindow2(window2);
-});
+//puzzle
+/*
+function place_queen(){
+queen = document.querySelectorAll(".square")
 
-open.addEventListener("click", function(){
-openWindow2(window2);
-});
-//apps
+queen.forEach(queen => {
+    queen.innerHTML = "🨁"
+})
+}
+*/
+
+const allSquares = document.getElementsByClassName("square")
 
 
-
-
+for(const i of allSquares){
+    i.addEventListener("click", function(){
+        i.innerHTML = "🨁"
+    });
+}
 
