@@ -1,4 +1,4 @@
-//background
+//-------------------------------------------------background--------------------------------------------------
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
@@ -81,12 +81,12 @@ window.addEventListener("resize", function(){
 
 
 
-//stats-chess.com
+//---------------------------------stats-chess.com--------------------------------------
 const chess_elo = fetch("https://api.chess.com/pub/player/mrneko-og/stats")
 .then(response => response.json())
 .then(data => document.getElementById("chess").innerHTML = data.chess_rapid.last.rating)
 
-//time tracking
+//--------------------time tracking--------------------
 
 function updateTime(){
     var currentTime = new Date().toLocaleString();
@@ -102,7 +102,7 @@ setInterval(updateTime, 1000)
 
 
 
-//dragable windows
+//-------------dragable windows-----------------
 
 dragElement(document.getElementById("window"));
 dragElement(document.getElementById("window2"));
@@ -166,7 +166,7 @@ function openWindow(element){
 
 
 
-//window3
+//-----------------window3----------------------
 
 var window3 = document.getElementById("window3")
 
@@ -194,23 +194,67 @@ function openWindow2(element){
     element.style.display = "flex"
 }
 
-//puzzle
-/*
-function place_queen(){
-queen = document.querySelectorAll(".square")
+//----------------------game------------------------------
+var character = document.getElementById("character")
+var block = document.getElementById("block");
+//function start(){
+//block.style.animation = "animation-block";
+//}
 
-queen.forEach(queen => {
-    queen.innerHTML = "🨁"
-})
+function jump(){
+    if(character.classList != "animate"){
+        character.classList.add("animate");
+        }
+    setTimeout(function(){
+        character.classList.remove("animate");
+    }, 500)
 }
-*/
 
+function start(){
+var checkDead = setInterval(function(){
+    var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+    var blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
+    block.classList.add("animate_block");
+    if(blockLeft < 20 && blockLeft > 0 && characterTop >=130){
+        block.style.animation = "none";
+        block.style.display = "none";
+        alert("You lose! ): reaload to play again");
+    }
+},10);
+}
+
+
+
+
+
+
+
+/*
+//chess puzzle
 const allSquares = document.getElementsByClassName("square")
-
+queen_number = 0
 
 for(const i of allSquares){
     i.addEventListener("click", function(){
-        i.innerHTML = "🨁"
+        if (queen_number < 7){
+            i.innerHTML = "🨁"
+            queen_number += 1
+            document.getElementById("queen_num").innerHTML = queen_number
+        }
+        else{
+            queen_number = "8 you won (:"
+            document.getElementById("queen_num").innerHTML = queen_number
+        }
+        
+
     });
 }
+*/
+
+
+
+
+
+
+
 
