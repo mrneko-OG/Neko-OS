@@ -29,7 +29,7 @@
 
     <div id="puzzle-app" >
         <div id="puzzle" class="app-style" onclick="openWindow(window3);">🨁</div>
-        <p>puzzle</p>
+        <p>game</p>
     </div>
 
     </div>
@@ -116,6 +116,26 @@
 </div>
     </div>
 </div>
+
+<div id="window3">
+        <div id="window-header">
+        <p style="cursor: pointer" id="close" onclick="closeWindow2(window3);">🨕</p>
+        <p class="window-name3">game</p>
+    </div>
+    <div class="home">
+        <div id="game">
+            <div id="character">🨁</div>
+            <div id="block">▲</div>
+        </div>
+        <div class="jump-btn" onclick="jump();">jump</div>
+        <div class="jump-btn" onclick="start();">start game</div>
+        </div>
+                
+    </div>
+</div>
+
+<!--
+chess puzzle code
 
 <div id="window3">
     <div id="window-header">
@@ -215,7 +235,13 @@
                 <div class="square"></div>
             </div>
         </div>
+        <div class="puzzle_score">
+            <p>Place 8 Queens on the board. good luck (:</p>
+            <div class="place"><p>Queens placed:<p id="queen_num">0</p></p></div>
+        </div>
 </div>
+-->
+
 
 
 <script src="script.js"></script>
