@@ -309,12 +309,82 @@ color: red;
 .window-name3{
     color: black;
     margin-top:3px;
-    margin-right:87%;
+    margin-right:88%;
 }
 
 .window-name3:hover{
     color: white;
 }
+
+#game{
+    width:500px;
+    height:200px;
+    border: solid 1px white;
+    box-shadow: 0 0 5px white, 0 0 50px red;  
+}
+
+#character{
+    width: 20px;
+    height:50px;
+    background-color: red;
+    color: black;
+    position: relative;
+    top:150px;
+}
+
+#block{
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    color: black;
+    position: relative;
+    top: 130px;
+    left: 470px;
+
+}
+
+.animate{
+    animation: jump 500ms;
+}
+
+.animate_block{
+    animation: animation-block 1s infinite linear;
+}
+
+@keyframes animation-block{
+    0%{
+        left: 480px;
+    }
+    100%{
+        left:-20px;
+    }
+}
+
+@keyframes jump{
+    0%{top: 150px;}
+    50%{top: 100px;}
+    100%{top: 150px;}
+}
+
+.jump-btn{
+    width: 150px;
+    height: 50px;
+    background-color: black;
+    border: solid 1px red;
+    border-radius:10px;
+    padding-top: 12px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.jump-btn:hover{
+    background-color: red;
+    border-color: black;
+}
+
+/*
+chess puzzle
 
 .square{
     background-color: red;
@@ -329,6 +399,7 @@ color: red;
 .square:hover{
     border: solid 1px red;
 }
+
 
 .board{
 display: grid;
@@ -357,3 +428,18 @@ margin-top: 30px;
 .files:nth-of-type(even) .square:nth-of-type(odd){
     background-color: black;
 }
+
+.puzzle_score{
+    text-align: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.place{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 25%;
+}
+*/
+
