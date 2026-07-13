@@ -1,249 +1,47 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-<head>
-<title>MrNeko</title>
-<link rel="icon" type="image/x-icon" href="NekoLogo1.png">
-<link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-<canvas id="canvas1"></canvas>
-
-        <div class="bar">
-         <img src="Tux.webp" alt="WebP rules." class="tux">
-            <p>Neko-OS</p>
-            <p id="time-bar"></p>
-                
-        </div>
-
-<div id="apps">
-    <div id="fish-app" >
-        <img src="fish.svg" id="fish" class="app-style" onclick="openWindow(window1);">
-        <p>fish</p>
-    </div>
-
-    <div id="info-app" >
-        <img src="code.svg" id="info" class="app-style" onclick="openWindow(window2);">
-        <p>info</p>
-    </div>
-
-    <div id="puzzle-app" >
-        <div id="puzzle" class="app-style" onclick="openWindow(window3);">🨁</div>
-        <p>game</p>
-    </div>
-
-    </div>
-</div>
-
-
-
-<div id="window">
-    <div id="window-header">
-        <p style="cursor: pointer" id="close" onclick="closeWindow2(window1);">🨕</p>
-        <p class="window-name1">fish</p>
-    </div>
+    <head>
+        <title>Personal website</title>
+        <link rel="icon" type="image/x-icon" href="BlueLogo.webp">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
     <div class="home">
-        <p>welcome, I'm</p>  
-        <h1>MrNeko</h1>
-        <div class="banner">
-        <img src="Jotaro-Neko.jpeg" width="150px" height="150px"> 
-        </div>
-        <p>follow me on</p>
-            <div class="socials">
-            <a href="https://www.youtube.com/@MrNeko_OG"><p class="link">youtube</p></a>
-            <a href="https://www.instagram.com/mrneko3og"><p class="link">instagram</p></a>
-            <a href="https://github.com/mrneko-OG"><p class="link">github</p></a>
-            </div>
-            <div id="stats">
-                <h3>Chess.com Elo: <h3 id="chess"></h3></h3>
-            </div>
-            <p>Enjoy Neko-OS (larp edition) (:</p>
+    <h1>Welcome (:</h1>
+    <h2>I'm MrNeko</h2>
+    <div class="sections">
+    <a class="link">Socials</a>
+    <a class="link">Programing</a>
+    <a class="link">Chess</a>
+    
     </div>
-</div>
-
-<div id="window2">
-    <div id="window-header">
-        <p style="cursor: pointer" id="close" onclick="closeWindow2(window2);">🨕</p>
-        <p class="window-name2">info</p>
+    <h1>Socials</h1>
+    <img src="Jotaro-Neko.jpeg" class="image">
+    <div class="sections">
+    <a href="https://www.youtube.com/@MrNeko_OG">YouTube</a>
+    <a href="https://www.instagram.com/mrneko3og">Instagram</a>
+    <a href="https://github.com/mrneko-OG">Github</a>
     </div>
-    <div class="home">
-        <h1>info</h1>
-        <div class="fastfetch">
-            <pre>
-         ,....,
-      ,::::::<
-     ,::/^\"``.
-    ,::/, `   e`.
-   ,::; |        '.
-   ,::|  \___,-.  c)
-   ;::|     \   '-'
-   ;::|      \
-   ;::|   _.=`\
-   `;:|.=` _.=`\
-     '|_.=`   __\
-     `\_..==`` /
-      .'.___.-'.
-     /          \
-    ('--......--')
-    /'--......--'\
-    `"--......--"
-            </pre>
-    <div class="system-info">
-        <div class="sys-info">
-        <p class="red">admin</p><p>@</p><p class="red">neko-os</p>
-        </div>
-
-        <div class="sys-info">
-        <p>------------------------</p>
-        </div>
-
-        <div class="sys-info">
-        <p class="red">OS</p><p>: Neko-OS (larp edition)</p>
-        </div>
-
-        <div class="sys-info">
-        <p class="red">User</p><p>: Admin</p>
-        </div>
-
-        <div class="sys-info">
-        <p class="red">Date/Time</p><p>: </p><p id="time2"></p>
-        </div>
-
-        <div class="sys-info">
-        <p class="red">Theme</p><p>: Black/White/Red</p>
-        </div>
+    <h1>Programming</h1>
+    <div class="red-window">
+    <div id="red-window-header"> Neko-OS</div>
+    <h1 class="red">Take a look at Neko-OS</h1>
+    <a href="https://mrneko-og.github.io/Neko-OS/" class="red-btn">click</a>
+    <a href="https://github.com/mrneko-OG/Neko-OS" class="red-btn">github</a>
     </div>
-</div>
+    <h1>Chess</h1>
+    <div class="sections">
+    <h2>chess.com elo:</h2><h1 id="chess"></h1>
     </div>
-</div>
+    <h1>Ignore this</h1>
+    <canvas class="webgl"></canvas>
 
-<div id="window3">
-        <div id="window-header">
-        <p style="cursor: pointer" id="close" onclick="closeWindow2(window3);">🨕</p>
-        <p class="window-name3">game</p>
     </div>
-    <div class="home">
-        <div id="game">
-            <div id="character">🨁</div>
-            <div id="block">▲</div>
-        </div>
-        <div class="jump-btn" onclick="jump();">jump</div>
-        <div class="jump-btn" onclick="start();">start game</div>
-        </div>
-                
-    </div>
-</div>
-
-<!--
-chess puzzle code
-
-<div id="window3">
-    <div id="window-header">
-        <p style="cursor: pointer" id="close" onclick="closeWindow2(window3);">🨕</p>
-        <p class="window-name3">puzzle</p>
-    </div>
-    <div class="home">
-        <h1>puzzle</h1>
-        <div class="board">
-            <div class="file-a files">
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-            </div>
-
-                        <div class="file-b files">
-                <div class="square">
-
-                </div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-            </div>
-
-                        <div class="file-c files">
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-            </div>
-
-                        <div class="file-d files">
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-            </div>
-
-                        <div class="file-e files">
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-            </div>
-
-                        <div class="file-f files">
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-            </div>
-
-                        <div class="file-g files">
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-            </div>
-
-                        <div class="file-h files">
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-            </div>
-        </div>
-        <div class="puzzle_score">
-            <p>Place 8 Queens on the board. good luck (:</p>
-            <div class="place"><p>Queens placed:<p id="queen_num">0</p></p></div>
-        </div>
-</div>
--->
-
-
-
-<script src="script.js"></script>
-</body>
+    <script type="module" src="script.js"></script>
+    </body>
 </html>
+
+
+
+
+
