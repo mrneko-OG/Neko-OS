@@ -1,445 +1,166 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body{
-    overflow: hidden;
-    background-color: black;
-}
-
-
-canvas{
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+    background-color:black;
+    color:white;
 }
 
 ::selection{
-    color:white;
-    background:red;
-}
-
-div{
-    color: white;
+    color:black;
+    background-color: cyan;
 }
 
 h1{
-    color: red;
+    color: white;
+    background: linear-gradient(90deg, cyan, white, cyan);
+    -webkit-background-clip: text;
+    background-size:200% auto;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    animation: gradient-animation 4s linear infinite;
     transition: 1s;
 }
 
 h1:hover{
-    color: white;
+    text-shadow: 0 0 35px white, 0 0 35px cyan;  
 }
 
-h3{
+@keyframes gradient-animation{
+    0%{
+        background-position: 0% center;
+    }
+
+    100%{
+        background-position: 200% center;
+    }
+}
+
+
+
+h2{
     color: white;
     transition: 1s;
 }
-
-h3:hover{
-    color: red;
+h2:hover{
+    color: cyan;
 }
-
-
-
-.bar{
-    display: flex;
-    flex-direction: row;
-    margin: 5px;
-    padding: 5px;
-    border: solid 1px red;
-    border-radius: 5px;
-    color: white;
-    width: 97%;
-    position:absolute;
-    bottom: 0%;
-    backdrop-filter: blur(5px);
-    background-color:rgba(0, 0, 0, 0.25); 
-    justify-content: space-between;
-    z-index: 5;
-    align-items: center;
-}
-
-
-.tux{
-    width: 50px;
-    height: 50px;
-}
-
-#apps{
-    padding-top: 64px;
-    padding-left: 16px;
-    width:100px;
-}
-
-#fish-app{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#info-app{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-}
-
-#puzzle-app{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-}
-
-#puzzle{
-    font-size: 35px;
-    text-align: center;
-    color: black;
-}
-
-.app-style{
-    background-color: red;
-    width: 50px;
-    height:50px;
-    border:solid 1px red;
-    cursor: pointer;
-    border-radius: 10px;
-    margin-bottom: 5px;
-    transition: 1s;
-}
-
-.app-style:hover{
-    background-color: white;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#window {
-  position: absolute;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  backdrop-filter: blur(5px);
-  background-color:rgba(0, 0, 0, 0.25); 
-  text-align: center;
-  border: 1px solid red;
-  border-radius:5px;
-}
-#window:hover{
-      box-shadow: 0 0 5px white, 0 0 50px red;  
-}
-
-
-#window-header {
-  display: flex;
-  flex-direction: row-reverse;
-  cursor: move;
-  z-index: 2;
-  background-color: red;
-  color: white;
-}
-
-#close{
-    border: solid 1px white;
-    border-radius:25px;
-    width:25px;
-    height:25px;
-    background-color: black;
-    color:white;
-    margin-right:10px;
-    transition: 1s;
-}
-
-#close:hover{
-    background-color:white;
-    color:black;
-    border: solid 1px black;
-}
-
-
-
-
-
-
-
-
 
 .home{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    animation-name: myAnimation;
-    animation-duration: 1s;
-    margin: 10%;
-    margin-left: 100px;
-    margin-right: 100px;
-}
-@keyframes myAnimation {
-  from {opacity: 0.1; }
-  to {opacity: 1;}
+    align-items: center;    
 }
 
+.sections{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    }
+
 p{
-transition-duration:1s;
-cursor: default;
+    transition: 1s;
 }
 
 p:hover{
-    color:red;
+    color:cyan
 }
+
+
+.image{
+    width: 150px;
+    height: 150px;
+    border: solid 3px cyan;
+    border-radius: 100%;
+    transition: 1s;
+}
+
+.image:hover{
+    border-radius: 0%;
+}
+
+a{
+    color: cyan;
+    transition: 1s;
+    background-color: #1c1c1c;
+    border: solid 2px #2b2b2b;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 0 3px cyan;  
+}
+
+a:hover{
+    color: white;
+    border-color: cyan;
+}
+
+.red-window{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+
+    border: solid 1px red;
+    border-radius: 5px;
+    color: white;
+    width: 500px;
+    height: 500px;
+    backdrop-filter: blur(5px);
+    background-color:rgba(0, 0, 0, 0.25); 
+    justify-content: space-between;
+    align-items: center;
+}
+
+#red-window-header{
+    width:100%;
+    display: flex;
+    flex-direction: row-reverse;
+    cursor: move;
+    background-color: red;
+    color: white;
+}
+
+.red-btn{
+    color: red;
+    transition: 1s;
+    background-color: black;
+    border: solid 2px red;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 0 3px red;  
+}
+
+.red-btn:hover{
+    color: black;
+    border-color: black;
+    background-color: red;
+}
+
 
 .red{
-color: red;
-}
-
- .banner{
-    animation: rotation 5s linear infinite;
-    margin:5%;
-    transition: 1s;
- }
- @keyframes rotation {
-    0%{
-        transform:rotate3d(1, 2, 1, 0deg);
-    }
-
-    100%{
-        transform:rotate3d(1, 2, 1, 360deg);
-    }
- }
-
-.socials{
-    padding-top: 10px;
-}
-
-.link{
-    color: red;
-    cursor: pointer;
-    padding-top:5px ;
-}
-
-.link:hover{
-    color:white;
-}
-
-#stats{
-    display: flex;
-    flex-direction: row;
-    margin-top: 10px;
-}
-
-#window2 {
-  position: absolute;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  backdrop-filter: blur(5px);
-  background-color:rgba(0, 0, 0, 0.25); 
-  text-align: center;
-  border: 1px solid red;
-  border-radius:5px;
-}
-#window2:hover{
-      box-shadow: 0 0 5px white, 0 0 50px red;  
-}
-
-.window-name1{
-    color: black;
-    padding-right:83%;
-    padding-top:3px;
-}
-.window-name1:hover{
     color: white;
-}
-.window-name2{
-    color: black;
-    padding-right:90%;
-    padding-top:3px;
-}
-.window-name2:hover{
-    color: white;
-}
-.fastfetch{
-    display: flex;
-    flex-direction: row;
-}
-
-.system-info{
-    padding:10%;
-    width:400px;
-}
-
-.sys-info{
-    display: flex;
-    flex-direction: row;
-}
-
-#window3 {
-  position: absolute;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  backdrop-filter: blur(5px);
-  background-color:rgba(0, 0, 0, 0.25); 
-  text-align: center;
-  border: 1px solid red;
-  border-radius:5px;
-}
-#window3:hover{
-      box-shadow: 0 0 5px white, 0 0 50px red;  
-}
-
-.window-name3{
-    color: black;
-    margin-top:3px;
-    margin-right:88%;
-}
-
-.window-name3:hover{
-    color: white;
-}
-
-#game{
-    width:500px;
-    height:200px;
-    border: solid 1px white;
-    box-shadow: 0 0 5px white, 0 0 50px red;  
-}
-
-#character{
-    width: 20px;
-    height:50px;
-    background-color: red;
-    color: black;
-    position: relative;
-    top:150px;
-}
-
-#block{
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    color: black;
-    position: relative;
-    top: 130px;
-    left: 470px;
-
-}
-
-.animate{
-    animation: jump 500ms;
-}
-
-.animate_block{
-    animation: animation-block 1s infinite linear;
-}
-
-@keyframes animation-block{
-    0%{
-        left: 480px;
-    }
-    100%{
-        left:-20px;
-    }
-}
-
-@keyframes jump{
-    0%{top: 150px;}
-    50%{top: 100px;}
-    100%{top: 150px;}
-}
-
-.jump-btn{
-    width: 150px;
-    height: 50px;
-    background-color: black;
-    border: solid 1px red;
-    border-radius:10px;
-    padding-top: 12px;
-    margin-top: 20px;
-    cursor: pointer;
+    background: linear-gradient(90deg, red, white, red);
+    -webkit-background-clip: text;
+    background-size:200% auto;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    animation: gradient-animation 4s linear infinite;
     transition: 1s;
 }
 
-.jump-btn:hover{
-    background-color: red;
-    border-color: black;
-}
-
-/*
-chess puzzle
-
-.square{
-    background-color: red;
-    color: red;
-    text-align: center;
-    font-size: 60px;
-    width: 70px;
-    height: 70px;
-    cursor: pointer;
-}
-
-.square:hover{
-    border: solid 1px red;
+.red:hover{
+    text-shadow: 0 0 35px white, 0 0 35px red;  
 }
 
 
-.board{
-display: grid;
-grid-template-columns: repeat(8, 1fr);
-height: 560px;
-width: 560px;
-box-shadow: 0 0 5px white, 0 0 50px red;
-margin-top: 30px;
-}
 
-.files:nth-of-type(odd) .square:nth-of-type(even){
-    
-    background-color: black;
-}
 
-.files:nth-of-type(odd) .square:nth-of-type(odd){
-    background-color: white;
-}
 
-.files:nth-of-type(even) .square:nth-of-type(even){
-    
-    
-    background-color: white;
-}
 
-.files:nth-of-type(even) .square:nth-of-type(odd){
-    background-color: black;
-}
 
-.puzzle_score{
-    text-align: center;
-    align-items: center;
-    padding-top: 10px;
-}
 
-.place{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-left: 25%;
-}
-*/
 
+
+.webgl{
+    border: solid 5px cyan;
+}
